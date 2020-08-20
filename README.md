@@ -11,14 +11,15 @@ MSI B460M mortar 迫击炮 WIFI EFI
 机器平时开发使用，正常负载使用温度在35-40度徘徊，编译在55-60度。R20跑分在78度左右
 ### 安装过程
 - 准备安装U盘：参考OC官方配置，十分好用：[USB Creation](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/mac-install.html#setting-up-opencore-s-efi-environment)，包含macOS、Windows、Linux的U盘制作。
-- (重要)使用OpenCoreConfigurator打开我提供的EFI的OC/config.plist 重新生成SystemSerialNumber/SystemUUID/MLB等
+- (重要)使用OpenCoreConfigurator打开我提供的EFI的OC/config.plist 重新生成SystemSerialNumber/SystemUUID/MLB
+- 将当前提供的EFI放入U盘EFI磁盘目录下，表示使用当前EFI进行引导
 - 开机配置主板各项配置，以及设置U盘UEFI启动顺序第一
 - 插入U盘，选择U盘UEFI启动，进行安装系统
 - 安装完成进入系统，成功!
 ### 其他
 - boot-args 里 agdpmod=pikera 表示5000系显卡，非5000系显卡去掉这个
 - 麦克风好像不能用
-- USB定制是支持转接NGFF接口的网卡。不一定支持蓝牙外接主板的，需要自行再定制
+- USB定制是支持转接NGFF接口的网卡。不一定支持蓝牙外接主板的，需要自行再定制。（这里说一下，我用的94360CS2，然后加了延长线转接口自行改装的）
 
 ## 硬件配置
 | 名称 | 型号 |
@@ -40,7 +41,7 @@ MSI B460M mortar 迫击炮 WIFI EFI
 ## 主板配置
 - Fast Boot：关闭
 - Secure Boot：关闭（默认关闭的）
-- CFG lock 开启（重要）
+- CFG lock disabled（重要）
 - Intel SGX 如果有，关闭，默认关闭的
 - Above 4G decoding 开启（重要）
 - Hyper-Threading 开启（默认都开的）
